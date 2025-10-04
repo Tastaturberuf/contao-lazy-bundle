@@ -1,0 +1,51 @@
+{
+    "name": "tastaturberuf/contao-lazy-dev-bundle",
+    "description": "Helper and Utilities for lazy Contao developers",
+    "license": "MIT",
+    "type": "contao-bundle",
+    "authors": [
+        {
+            "name": "Daniel Rick",
+            "role": "Lazy Developer"
+        }
+    ],
+    "support": {
+        "issues": "https://github.com/tastaturberuf/contao-lazy-dev-bundle/issues",
+        "source": "https://github.com/tastaturberuf/contao-lazy-dev-bundle"
+    },
+    "require": {
+        "php": "^8.4",
+        "contao/core-bundle": "^5.3",
+        "contao/manager-plugin": "^2.4",
+        "symfony/config": "^6.4 || ^7.3",
+        "symfony/dependency-injection": "^6.4 || ^7.3",
+        "symfony/http-kernel": "^6.4 || ^7.3"
+    },
+    "require-dev": {
+        "phpstan/phpstan": "^2.1",
+        "phpunit/phpunit": "^9.5",
+        "rector/rector": "^2.1",
+        "roave/security-advisories": "dev-latest",
+        "symfony/phpunit-bridge": "^6.4 || ^7.3"
+    },
+    "autoload": {
+        "psr-4": {
+            "Tastaturberuf\\ContaoLazyDevBundle\\": "src/"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "Tastaturberuf\\ContaoLazyDevBundle\\Tests\\": "tests/"
+        }
+    },
+    "config": {
+        "sort-packages": true,
+        "allow-plugins": false
+    },
+    "extra": {
+        "contao-manager-plugin": "Tastaturberuf\\ContaoLazyDevBundle\\TastaturberufContaoLazyDevBundle"
+    },
+    "scripts": {
+        "unit-tests": "@php vendor/bin/phpunit --colors=always"
+    }
+}
