@@ -49,6 +49,22 @@ I plan to skip this step in the future too.
 - If you have a `/config/service.php` in your bundle, the bundle will automatically register your services.
 - If you have a `/config/routes.php` in your bundle, the bundle will automatically register your routes.
 
+### Register Contao models
+
+This method ensures that the provided model class exists, is a subclass of the base `Model` class, and optionally forces
+registration even if it is already registered.
+The model will be assigned to the global `$GLOBALS['TL_MODELS']` array using its table name as the key.
+
+```php
+# /contao/config/config.php
+
+use Tastaturberuf\ContaoLazyDevBundle\Contao\ContaoConfig;
+
+ContaoConfig::registerModel(YourModel::class);
+
+ContaoConfig::registerModels(YourModel::class, YourOtherModel::class);
+```
+
 ## Maintainer
 
 [Daniel Rick][2] **with ♥ and Contao**
