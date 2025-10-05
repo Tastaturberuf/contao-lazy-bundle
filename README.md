@@ -68,7 +68,8 @@ ContaoConfig::registerModels(YourModel::class, YourOtherModel::class);
 ### Lazy ScopeMatcher
 
 Instead of injecting two services for scope matching, you can use the `LazyScopeMatcher` class as wrapper.
-As default the taken request is the current one.
+As default the taken request is the current one. Since Contao 5.4 you dont need this anymore, you csn use
+the default ScopeMatcher without needing the RequestStack.
 
 ```php
 # /src/Services/YourService.php
@@ -80,11 +81,6 @@ class YourService {
         $scopeMatcher->isFrontendRequest();
         $scopeMatcher->isBackendRequest();
         $scopeMatcher->isContaoRequest();
-
-        // or use the properties
-        $scopeMatcher->isFrontendRequest;
-        $scopeMatcher->isBackendRequest;
-        $scopeMatcher->isContaoRequest;
     }
 }
 ```
