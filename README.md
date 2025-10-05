@@ -67,8 +67,13 @@ ContaoConfig::registerModels(YourModel::class, YourOtherModel::class);
 
 ## Maintainer
 
-[Daniel Rick][2] **with ♥ and Contao**
+[![Daniel Rick](https://avatars.githubusercontent.com/u/1027521?s=128)][3]
+
+[![Tastaturberuf](https://tastaturberuf.de/files/img/logo/2017.png)][2]
+
+**PHP with ♥ and Contao**
 
 [1]: https://contao.org
-
 [2]: https://tastaturberuf.de
+
+[3]: https://github.com/tastaturberuf
