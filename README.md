@@ -65,6 +65,30 @@ ContaoConfig::registerModel(YourModel::class);
 ContaoConfig::registerModels(YourModel::class, YourOtherModel::class);
 ```
 
+### Lazy ScopeMatcher
+
+Instead of injecting two services for scope matching, you can use the `LazyScopeMatcher` class as wrapper.
+As default the taken request is the current one.
+
+```php
+# /src/Services/YourService.php
+
+use Tastaturberuf\ContaoLazyDevBundle\Contao\LazyScopeMatcher;
+
+class YourService {
+   public function __construct(LazyScopeMatcher $scopeMatcher) {
+        $scopeMatcher->isFrontendRequest();
+        $scopeMatcher->isBackendRequest();
+        $scopeMatcher->isContaoRequest();
+
+        // or use the properties
+        $scopeMatcher->isFrontendRequest;
+        $scopeMatcher->isBackendRequest;
+        $scopeMatcher->isContaoRequest;
+    }
+}
+```
+
 ## Maintainer
 
 [![Daniel Rick](https://avatars.githubusercontent.com/u/1027521?s=128)][3]
