@@ -16,7 +16,6 @@ use Symfony\Component\DependencyInjection\Loader\Configurator\ContainerConfigura
 use Symfony\Component\HttpKernel\Bundle\AbstractBundle;
 use Symfony\Component\HttpKernel\KernelInterface;
 use Symfony\Component\Routing\RouteCollection;
-use function file_exists;
 
 abstract class AbstractContaoBundle extends AbstractBundle implements BundlePluginInterface, RoutingPluginInterface
 {
@@ -35,21 +34,33 @@ abstract class AbstractContaoBundle extends AbstractBundle implements BundlePlug
     #[Override]
     public function loadExtension(array $config, ContainerConfigurator $container, ContainerBuilder $builder): void
     {
-        if (file_exists($file = $this->getPath() . '/config/services.php')) {
-            $container->import($file);
+        $files = glob($this->getPath() . '/config/*.{php,yaml}', GLOB_BRACE);
+        $exclude = glob($this->getPath() . '/config/routes.{php,yaml}', GLOB_BRACE);
+
+        foreach ($files as $file) {
+            if (in_array($file, $exclude)) {
+                continue;
+            }
+
+            $container->import($file, ignoreErrors: false);
         }
     }
 
     #[Override]
     public function getRouteCollection(LoaderResolverInterface $resolver, KernelInterface $kernel): ?RouteCollection
     {
-        if (file_exists($file = $this->getPath() . '/config/routes.php')) {
-            return $resolver
-                ->resolve($file)
-                ->load($file);
+        $files = array_merge(
+            glob($this->getPath() . '/config/routes.{php,yaml}', GLOB_BRACE),
+            glob($this->getPath() . '/config/routes/*.{php,yaml}', GLOB_BRACE)
+        );
+
+        $routeCollection = new RouteCollection();
+
+        foreach ($files as $file) {
+            $routeCollection->addCollection($resolver->resolve($file)->load($file));
         }
 
-        return null;
+        return $routeCollection;
     }
 
 }

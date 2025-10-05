@@ -46,8 +46,8 @@ I plan to skip this step in the future too.
 
 ### Auto configuration
 
-- If you have a `/config/service.php` in your bundle, the bundle will automatically register your services.
-- If you have a `/config/routes.php` in your bundle, the bundle will automatically register your routes.
+All config files in `/config/*.{php,yaml}` will be automatically loaded. Except `/config/routes.{php,yaml}` will be
+registered as routes. Also all files in `/config/routes/*.{php,xml}` will be registered as routes.
 
 ### Register Contao models
 
