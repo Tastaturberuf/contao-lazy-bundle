@@ -31,17 +31,12 @@ class LazyScopeMatcherTest extends TestCase
         $this->assertFalse($scopeMatcher->isBackendRequest());
         $this->assertFalse($scopeMatcher->isFrontendRequest());
         $this->assertFalse($scopeMatcher->isContaoRequest());
-
-        $this->assertFalse($scopeMatcher->isBackendRequest);
-        $this->assertFalse($scopeMatcher->isFrontendRequest);
-        $this->assertFalse($scopeMatcher->isContaoRequest);
     }
 
     public function testContaoRequest(): void
     {
         $scopeMatcher = $this->getScopeMatcher($this->backendRequest);
 
-        $this->assertTrue($scopeMatcher->isContaoRequest);
         $this->assertTrue($scopeMatcher->isContaoRequest());
     }
 
@@ -49,7 +44,6 @@ class LazyScopeMatcherTest extends TestCase
     {
         $scopeMatcher = $this->getScopeMatcher($this->backendRequest);
 
-        $this->assertTrue($scopeMatcher->isBackendRequest);
         $this->assertTrue($scopeMatcher->isBackendRequest());
     }
 
@@ -57,7 +51,6 @@ class LazyScopeMatcherTest extends TestCase
     {
         $scopeMatcher = $this->getScopeMatcher($this->frontendRequest);
 
-        $this->assertTrue($scopeMatcher->isFrontendRequest);
         $this->assertTrue($scopeMatcher->isFrontendRequest());
     }
 
@@ -68,7 +61,8 @@ class LazyScopeMatcherTest extends TestCase
 
         return new LazyScopeMatcher(new ScopeMatcher(
             new BackendMatcher(),
-            new FrontendMatcher()
+            new FrontendMatcher(),
+            $requestStack // since Contao 5.4
         ), $requestStack);
     }
 

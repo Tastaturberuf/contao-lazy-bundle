@@ -8,24 +8,15 @@ use Contao\CoreBundle\Routing\ScopeMatcher;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\RequestStack;
 
+/**
+ * A utility class for managing request scopes and matching various request contexts.
+ * Since Contao 5.4 you can use the Contao ScopeMatcher directly, but this class is still needed for older versions.
+ */
 final class LazyScopeMatcher
 {
 
-    public bool $isBackendRequest {
-        get => $this->isBackendRequest();
-    }
-
-    public bool $isFrontendRequest {
-        get => $this->isFrontendRequest();
-    }
-
-    public bool $isContaoRequest {
-        get => $this->isContaoRequest();
-    }
-
-    public Request $request {
-        get => $this->request ?? $this->requestStack->getCurrentRequest() ?? new Request();
-        set => $value;
+    private Request $request {
+        get => $this->requestStack->getCurrentRequest() ?? new Request();
     }
 
     public function __construct(
@@ -33,7 +24,6 @@ final class LazyScopeMatcher
         public readonly RequestStack $requestStack,
     )
     {
-
     }
 
     public function isBackendRequest(?Request $request = null): bool
