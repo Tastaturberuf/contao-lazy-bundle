@@ -1,4 +1,4 @@
-name: PHP Composer
+name: Contao 5.3 LTS
 
 on:
   push:
