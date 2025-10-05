@@ -4,7 +4,6 @@ declare(strict_types=1);
 
 namespace Tastaturberuf\ContaoLazyDevBundle\Tests;
 
-use Contao\ManagerPlugin\Bundle\Parser\ParserInterface;
 use PHPUnit\Framework\TestCase;
 use Tastaturberuf\ContaoLazyDevBundle\TastaturberufContaoLazyDevBundle;
 
@@ -14,6 +13,7 @@ class TastaturberufContaoLazyDevBundleTest extends TestCase
     {
         $bundle = new TastaturberufContaoLazyDevBundle();
 
-        dd($bundle->getBundles(new ParserInterface()));
+        $this->assertInstanceOf(TastaturberufContaoLazyDevBundle::class, $bundle);
     }
+
 }

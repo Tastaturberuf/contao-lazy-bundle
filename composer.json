@@ -16,14 +16,14 @@
     "require": {
         "php": "^8.4",
         "contao/core-bundle": "^5.3",
-        "contao/manager-plugin": "^2.4",
+        "contao/manager-plugin": "^2.13",
         "symfony/config": "^6.4 || ^7.3",
         "symfony/dependency-injection": "^6.4 || ^7.3",
         "symfony/http-kernel": "^6.4 || ^7.3"
     },
     "require-dev": {
         "phpstan/phpstan": "^2.1",
-        "phpunit/phpunit": "^9.5",
+        "phpunit/phpunit": "^10.5",
         "rector/rector": "^2.1",
         "roave/security-advisories": "dev-latest",
         "symfony/phpunit-bridge": "^6.4 || ^7.3"

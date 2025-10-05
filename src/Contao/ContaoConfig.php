@@ -36,7 +36,7 @@ final readonly class ContaoConfig
 
         $table = $model::getTable();
 
-        if (array_key_exists($table, $GLOBALS['TL_MODELS']) && !$force) {
+        if (array_key_exists($table, $GLOBALS['TL_MODELS'] ?? []) && !$force) {
             throw new InvalidArgumentException(sprintf('Model "%s" is already registered.', $model));
         }
 
