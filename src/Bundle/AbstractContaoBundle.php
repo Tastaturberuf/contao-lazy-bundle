@@ -16,6 +16,7 @@ use Symfony\Component\DependencyInjection\Loader\Configurator\ContainerConfigura
 use Symfony\Component\HttpKernel\Bundle\AbstractBundle;
 use Symfony\Component\HttpKernel\KernelInterface;
 use Symfony\Component\Routing\RouteCollection;
+use Tastaturberuf\ContaoLazyDevBundle\TastaturberufContaoLazyDevBundle;
 
 abstract class AbstractContaoBundle extends AbstractBundle implements BundlePluginInterface, RoutingPluginInterface
 {
@@ -26,7 +27,8 @@ abstract class AbstractContaoBundle extends AbstractBundle implements BundlePlug
         return [
             BundleConfig::create(static::class)
                 ->setLoadAfter([
-                    ContaoCoreBundle::class
+                    ContaoCoreBundle::class,
+                    TastaturberufContaoLazyDevBundle::class,
                 ])
         ];
     }
