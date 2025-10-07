@@ -1,4 +1,4 @@
-# Contao Lazy Dev
+# Contao Lazy Bundle
 
 > [!NOTE]
 > **Contao** is an Open Source PHP Content Management System for people who want a professional website that is easy to
@@ -8,7 +8,7 @@ You can be more lazy than ever when you follow the Contao best practices that ar
 ## Install
 
 ```bash
-composer require tastaturberuf/contao-lazy-dev-bundle
+composer require tastaturberuf/contao-lazy-bundle
 ```
 
 ## Features
@@ -17,7 +17,7 @@ Here are some of the features that this bundle provides:
 
 ### Lazy bundle setup
 
-The bundle provides a `AbstractContaoBundle` class that you can use to create your own bundle.
+The bundle provides a `LazyBundle` class that you can use to create your own bundle.
 You dont need to create a `Plugin` class anymore. At this time you have to manuel set the plugin class in your
 `composer.json`.
 
@@ -26,9 +26,9 @@ You dont need to create a `Plugin` class anymore. At this time you have to manue
 
 namespace Vendor\YourBundleName;
 
-use Tastaturberuf\ContaoLazyDevBundle\AbstractContaoBundle;
+use Tastaturberuf\ContaoLazyDevBundle\LazyBundle;
 
-class YourBundleNameBundle extends AbstractContaoBundle {
+class YourBundleNameBundle extends LazyBundle {
 }
 ```
 
