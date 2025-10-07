@@ -2,7 +2,7 @@
 
 > [!NOTE]
 > **Contao** is an Open Source PHP Content Management System for people who want a professional website that is easy to
-> maintain. Visit the [project website][1] for more information.
+> maintain. Visit the [project website](https://contao.org) for more information.
 
 You can be more lazy than ever when you follow the Contao best practices that are provided with this bundle.
 ## Install
@@ -87,13 +87,8 @@ class YourService {
 
 ## Maintainer
 
-[![Daniel Rick](https://avatars.githubusercontent.com/u/1027521?s=128)][3]
+[![Daniel Rick](https://avatars.githubusercontent.com/u/1027521?s=128)](https://github.com/tastaturberuf)
 
-[![Tastaturberuf](https://tastaturberuf.de/files/img/logo/2017.png)][2]
+[![Tastaturberuf](https://tastaturberuf.de/files/img/logo/2017.png)](https://tastaturberuf.de)
 
 **PHP with ♥ and Contao**
-
-[1]: https://contao.org
-[2]: https://tastaturberuf.de
-
-[3]: https://github.com/tastaturberuf
