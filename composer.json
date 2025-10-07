@@ -2,7 +2,7 @@
     "name": "tastaturberuf/contao-lazy-bundle",
     "description": "Helper and Utilities for lazy Contao developers",
     "license": "MIT",
-    "type": "contao-bundle",
+    "type": "library",
     "authors": [
         {
             "name": "Daniel Rick",
