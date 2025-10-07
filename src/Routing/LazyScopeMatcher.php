@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace Tastaturberuf\ContaoLazyDevBundle\Routing;
+namespace Tastaturberuf\ContaoLazyBundle\Routing;
 
 use Contao\CoreBundle\Routing\ScopeMatcher;
 use Symfony\Component\HttpFoundation\Request;

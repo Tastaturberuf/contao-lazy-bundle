@@ -1,5 +1,5 @@
 {
-    "name": "tastaturberuf/contao-lazy-dev-bundle",
+    "name": "tastaturberuf/contao-lazy-bundle",
     "description": "Helper and Utilities for lazy Contao developers",
     "license": "MIT",
     "type": "contao-bundle",
@@ -10,8 +10,8 @@
         }
     ],
     "support": {
-        "issues": "https://github.com/tastaturberuf/contao-lazy-dev-bundle/issues",
-        "source": "https://github.com/tastaturberuf/contao-lazy-dev-bundle"
+        "issues": "https://github.com/tastaturberuf/contao-lazy-bundle/issues",
+        "source": "https://github.com/tastaturberuf/contao-lazy-bundle"
     },
     "require": {
         "php": "^8.4",
@@ -34,12 +34,12 @@
     },
     "autoload": {
         "psr-4": {
-            "Tastaturberuf\\ContaoLazyDevBundle\\": "src/"
+            "Tastaturberuf\\ContaoLazyBundle\\": "src/"
         }
     },
     "autoload-dev": {
         "psr-4": {
-            "Tastaturberuf\\ContaoLazyDevBundle\\Tests\\": "tests/"
+            "Tastaturberuf\\ContaoLazyBundle\\Tests\\": "tests/"
         }
     },
     "config": {
@@ -47,7 +47,7 @@
         "allow-plugins": false
     },
     "extra": {
-        "contao-manager-plugin": "Tastaturberuf\\ContaoLazyDevBundle\\TastaturberufContaoLazyDevBundle"
+        "contao-manager-plugin": "Tastaturberuf\\ContaoLazyBundle\\TastaturberufContaoLazyBundle"
     },
     "scripts": {
         "unit-tests": "@php vendor/bin/phpunit --colors=always"

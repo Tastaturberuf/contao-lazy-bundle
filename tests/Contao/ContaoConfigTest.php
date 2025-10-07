@@ -2,13 +2,13 @@
 
 declare(strict_types=1);
 
-namespace Tastaturberuf\ContaoLazyDevBundle\Tests\Contao;
+namespace Tastaturberuf\ContaoLazyBundle\Tests\Contao;
 
 use Contao\Model;
 use PHPUnit\Framework\Attributes\RunTestsInSeparateProcesses;
 use PHPUnit\Framework\Attributes\Test;
 use PHPUnit\Framework\TestCase;
-use Tastaturberuf\ContaoLazyDevBundle\Contao\ContaoConfig;
+use Tastaturberuf\ContaoLazyBundle\Contao\ContaoConfig;
 
 #[RunTestsInSeparateProcesses]
 class ContaoConfigTest extends TestCase

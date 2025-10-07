@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace Tastaturberuf\ContaoLazyDevBundle\Bundle;
+namespace Tastaturberuf\ContaoLazyBundle\Bundle;
 
 use Contao\CoreBundle\ContaoCoreBundle;
 use Contao\ManagerPlugin\Bundle\BundlePluginInterface;
@@ -16,9 +16,9 @@ use Symfony\Component\DependencyInjection\Loader\Configurator\ContainerConfigura
 use Symfony\Component\HttpKernel\Bundle\AbstractBundle;
 use Symfony\Component\HttpKernel\KernelInterface;
 use Symfony\Component\Routing\RouteCollection;
-use Tastaturberuf\ContaoLazyDevBundle\TastaturberufContaoLazyDevBundle;
+use Tastaturberuf\ContaoLazyBundle\TastaturberufContaoLazyBundle;
 
-abstract class AbstractContaoBundle extends AbstractBundle implements BundlePluginInterface, RoutingPluginInterface
+abstract class LazyBundle extends AbstractBundle implements BundlePluginInterface, RoutingPluginInterface
 {
 
     #[Override]
@@ -28,7 +28,7 @@ abstract class AbstractContaoBundle extends AbstractBundle implements BundlePlug
             BundleConfig::create(static::class)
                 ->setLoadAfter([
                     ContaoCoreBundle::class,
-                    TastaturberufContaoLazyDevBundle::class,
+                    TastaturberufContaoLazyBundle::class,
                 ])
         ];
     }

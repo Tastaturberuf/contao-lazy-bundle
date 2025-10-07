@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace Tastaturberuf\ContaoLazyDevBundle\Tests\Routing;
+namespace Tastaturberuf\ContaoLazyBundle\Tests\Routing;
 
 use Contao\CoreBundle\Routing\Matcher\BackendMatcher;
 use Contao\CoreBundle\Routing\Matcher\FrontendMatcher;
@@ -10,7 +10,7 @@ use Contao\CoreBundle\Routing\ScopeMatcher;
 use PHPUnit\Framework\TestCase;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\RequestStack;
-use Tastaturberuf\ContaoLazyDevBundle\Routing\LazyScopeMatcher;
+use Tastaturberuf\ContaoLazyBundle\Routing\LazyScopeMatcher;
 
 class LazyScopeMatcherTest extends TestCase
 {

@@ -2,16 +2,16 @@
 
 declare(strict_types=1);
 
-namespace Tastaturberuf\ContaoLazyDevBundle;
+namespace Tastaturberuf\ContaoLazyBundle;
 
 use Contao\CoreBundle\ContaoCoreBundle;
 use Contao\ManagerPlugin\Bundle\Config\BundleConfig;
 use Contao\ManagerPlugin\Bundle\Parser\ParserInterface;
 use Override;
-use Tastaturberuf\ContaoLazyDevBundle\Bundle\AbstractContaoBundle;
+use Tastaturberuf\ContaoLazyBundle\Bundle\LazyBundle;
 
 
-final class TastaturberufContaoLazyDevBundle extends AbstractContaoBundle
+final class TastaturberufContaoLazyBundle extends LazyBundle
 {
 
     /**

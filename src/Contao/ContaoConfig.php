@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace Tastaturberuf\ContaoLazyDevBundle\Contao;
+namespace Tastaturberuf\ContaoLazyBundle\Contao;
 
 use Contao\Model;
 use InvalidArgumentException;
