@@ -92,8 +92,10 @@ You hate generating an alias? Me too. Just use the `LazyAliasGenerator` class to
 ```php
 # /src/DataContainer/YourDataContainer.php
 
+use Contao\CoreBundle\DependencyInjection\Attribute\AsCallback;
 use Tastaturberuf\ContaoLazyBundle\Contao\LazyAliasGenerator;
 
+#[AsCallback('my_table', 'fields.alias.save')]
 public function generateAlias(string $alias, DC_Table $dc): string
 {
     return $this->lazyAliasGenerator($dc->getActiveRecord()['name'], $alias, $dc, 'alias', 'custom-prefix-');
