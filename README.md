@@ -98,7 +98,7 @@ use Tastaturberuf\ContaoLazyBundle\Contao\LazyAliasGenerator;
 #[AsCallback('my_table', 'fields.alias.save')]
 public function generateAlias(string $alias, DC_Table $dc): string
 {
-    return $this->lazyAliasGenerator($dc->getActiveRecord()['name'], $alias, $dc, 'alias', 'custom-prefix-');
+    return $this->lazyAliasGenerator->generate($dc->getActiveRecord()['name'], $alias, $dc, 'alias', 'custom-prefix-');
 }
 
 ```
