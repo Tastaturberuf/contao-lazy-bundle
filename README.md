@@ -85,6 +85,25 @@ class YourService {
 }
 ```
 
+### Lazy Alias Generator
+
+You hate generating an alias? Me too. Just use the `LazyAliasGenerator` class to generate the alias in an oneliner.
+
+```php
+# /src/DataContainer/YourDataContainer.php
+
+use Tastaturberuf\ContaoLazyBundle\Contao\LazyAliasGenerator;
+
+public function generateAlias(string $alias, DC_Table $dc): string
+{
+    return $this->lazyAliasGenerator($dc->getActiveRecord()['name'], $alias, $dc, 'alias', 'custom-prefix-');
+}
+
+```
+
+That's all. The Service checks for null values, trim strings, check for duplicates and numerical alias. It's awesome
+easy to use.
+
 ## Maintainer
 
 [![Daniel Rick](https://avatars.githubusercontent.com/u/1027521?s=128)](https://github.com/tastaturberuf)
